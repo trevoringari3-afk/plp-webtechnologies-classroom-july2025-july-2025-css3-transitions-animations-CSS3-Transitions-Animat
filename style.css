@@ -1,0 +1,174 @@
+/* ============================
+   Part 1: CSS Transitions & Animations
+============================ */
+
+/* Button hover effect */
+button:hover {
+  background-color: #ff6f61;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Continuous spin animation */
+.spin {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================
+   Part 3: CSS + JS Integration
+============================ */
+
+/* Bounce animation */
+.bounce {
+  animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 2rem;
+  color: #222;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Button styles */
+.fancy-btn, #scopeBtn, #openModalBtn {
+  padding: 0.7em 1.5em;
+  margin: 1em 0.5em;
+  border: none;
+  background: #4f8cff;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.fancy-btn:hover, #scopeBtn:hover, #openModalBtn:hover {
+  background: #2563eb;
+  transform: scale(1.08);
+}
+
+/* Animated Box */
+.box {
+  width: 100px;
+  height: 100px;
+  background: #ffb347;
+  margin: 1em auto 2em auto;
+  border-radius: 10px;
+  transition: box-shadow 0.4s;
+}
+.box.bounce {
+  animation: bounce 1s;
+}
+@keyframes bounce {
+  0%   { transform: translateY(0);}
+  30%  { transform: translateY(-60px);}
+  50%  { transform: translateY(0);}
+  70%  { transform: translateY(-30px);}
+  100% { transform: translateY(0);}
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s;
+}
+.modal-content {
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  position: relative;
+  min-width: 300px;
+  text-align: center;
+}
+.close {
+  position: absolute;
+  right: 1em; top: 1em;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+.slide-out {
+  animation: slideOut 0.5s forwards;
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-100px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+@keyframes slideOut {
+  from { opacity: 1; transform: translateY(0);}
+  to   { opacity: 0; transform: translateY(-100px);}
+}
+
+/* Card Flip */
+.card {
+  width: 120px;
+  height: 160px;
+  margin: 2em auto;
+  perspective: 600px;
+  cursor: pointer;
+}
+.card-inner {
+  width: 100%; height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front, .card-back {
+  position: absolute;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.card-front { background: #4f8cff; color: #fff; }
+.card-back  { background: #ffb347; color: #222; transform: rotateY(180deg);}

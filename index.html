@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS3 Transitions & Animations + JS Integration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 class="fade-in">CSS3 Transitions & Animations + JS Demo</h1>
+
+  <!-- Example of a spinning icon -->
+  <div class="spin" style="font-size:2em; text-align:center;">&#9889;</div>
+
+  <!-- Part 1: CSS Animations -->
+  <button id="animateBtn" class="fancy-btn">Animate Box</button>
+  <div id="animateBox" class="box"></div>
+
+  <!-- Part 2: JS Functions -->
+  <button id="scopeBtn">Show Area Calculation</button>
+  <div id="areaResult"></div>
+
+  <!-- Part 3: Modal -->
+  <button id="openModalBtn">Open Modal</button>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModalBtn" class="close">&times;</span>
+      <h2>Modal Title</h2>
+      <p>This is a sliding modal with fade effect!</p>
+    </div>
+  </div>
+
+  <!-- Card Flip -->
+  <div id="card" class="card">
+    <div class="card-inner">
+      <div class="card-front">Front</div>
+      <div class="card-back">Back</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
